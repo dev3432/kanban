@@ -3,7 +3,6 @@ const app = express();
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 app.set('database', (process.env.MONGODB_URI || 'mongodb://admin:admin@ds062339.mlab.com:62339/piperdb'));
-//const uri = 'localhost/books';
 mongoose.connect(app.get('database'))
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
